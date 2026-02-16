@@ -16,9 +16,11 @@ jobs:
           python-version: "3.11"
 
       - name: Install deps
+        working-directory: react-vite-next-senior
         run: pip install -r scripts/requirements.txt || true
 
       - name: Sync sources
+        working-directory: react-vite-next-senior
         run: python scripts/sync_sources.py
 
       - name: Create PR if changes
